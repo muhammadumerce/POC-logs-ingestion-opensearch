@@ -101,8 +101,8 @@ exporters:
   #     # Elastic APM Server secret token
   #     Authorization: "Bearer ${ELASTIC_APM_SERVER_SECRET}"  
 
-  otlphttp:
-    traces_endpoint: "poc-pipeline-opensearch-dayi4wmnbwkmwv7qwyrmpwaj34.us-east-2.osis.amazonaws.com/v1/traces"
+  otlphttp/logs:
+    logs_endpoint: "poc-pipeline-opensearch-dayi4wmnbwkmwv7qwyrmpwaj34.us-east-2.osis.amazonaws.com/v1/traces"
     auth:
       authenticator: sigv4auth
     compression: none
@@ -112,4 +112,4 @@ service:
     logs/file:
       receivers: [ filelog ]
       processors: [ transform/log, batch ]
-      exporters: [logging, otlphttp]
+      exporters: [logging, otlphttp/logs]
