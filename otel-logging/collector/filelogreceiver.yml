@@ -95,14 +95,14 @@ processors:
 exporters:
   logging:
     verbosity: detailed
-  otlphttp/elastic: 
-    endpoint: "${ELASTIC_APM_SERVER_ENDPOINT}"
-    headers:
-      # Elastic APM Server secret token
-      Authorization: "Bearer ${ELASTIC_APM_SERVER_SECRET}"  
+  # otlphttp/elastic: 
+  #   endpoint: "${ELASTIC_APM_SERVER_ENDPOINT}"
+  #   headers:
+  #     # Elastic APM Server secret token
+  #     Authorization: "Bearer ${ELASTIC_APM_SERVER_SECRET}"  
 
   otlphttp:
-    traces_endpoint: "https://pipeline-endpoint.us-east-1.osis.amazonaws.com/v1/traces"
+    traces_endpoint: "poc-pipeline-opensearch-dayi4wmnbwkmwv7qwyrmpwaj34.us-east-2.osis.amazonaws.com/v1/traces"
     auth:
       authenticator: sigv4auth
     compression: none
